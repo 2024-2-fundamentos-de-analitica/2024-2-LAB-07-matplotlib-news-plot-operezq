@@ -6,6 +6,7 @@ Escriba el codigo que ejecute la accion solicitada en cada pregunta.
 
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 
 def pregunta_01():
     """
@@ -18,6 +19,7 @@ def pregunta_01():
     El gráfico debe salvarse al archivo `files/plots/news.png`.
 
     """
+    os.makedirs("files/plots", exist_ok=True)
 
     plt.Figure()
 
@@ -97,7 +99,6 @@ def pregunta_01():
     )
     plt.tight_layout()
 
-    plt.savefig("files/plots/news.png")
+    plt.savefig(os.path.join("files/plots", "news.png"))
 
-
-
+    plt.show()
